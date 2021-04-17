@@ -49,14 +49,14 @@ namespace WolvenKit.RED4.CR2W.Archive
 
         #region Properties
 
-        [Index(0)] public virtual IGameArchive Archive { get; set; }
+        [Index(0)] new public virtual IGameArchive Archive { get; set; }
         [Index(1)]
         public virtual string bytesAsString
         {
             get { return BitConverter.ToString(SHA1Hash); }
             set { }
         }
-        [Index(2)] public virtual string CompressionType { get; set; }
+        [Index(2)] new public virtual string CompressionType { get; set; }
         [Index(3)]
         public virtual string Extension
         {
@@ -69,7 +69,7 @@ namespace WolvenKit.RED4.CR2W.Archive
             get { return string.IsNullOrEmpty(_nameStr) ? $"{NameHash64}.bin" : _nameStr; }
             set { }
         }
-        [Index(5)] public virtual string Name { get; set; }
+        [Index(5)] new public virtual string Name { get; set; }
         [Index(6)] public virtual ulong NameHash64 { get; set; }
         [Index(7)]
         public virtual string NameOrHash
@@ -78,21 +78,21 @@ namespace WolvenKit.RED4.CR2W.Archive
             set { }
         }
         [Index(8)] public virtual uint NumInlineBufferSegments { get; set; }
-        [Index(9)] public virtual long PageOffset { get; set; }
+        [Index(9)] new public virtual long PageOffset { get; set; }
         [Index(10)] public virtual uint ResourceDependenciesEnd { get; set; }
         [Index(11)] public virtual uint ResourceDependenciesStart { get; set; }
         [Index(12)] public virtual uint SegmentsEnd { get; set; }
         [Index(13)] public virtual uint SegmentsStart { get; set; }
         [Index(14)] public virtual byte[] SHA1Hash { get; set; }
-        [Index(15)] public virtual uint Size { get; set; }
+        [Index(15)] new public virtual uint Size { get; set; }
         [Index(16)] public virtual DateTime Timestamp { get; set; }
-        [Index(17)] public virtual uint ZSize { get; set; }
+        [Index(17)] new public virtual uint ZSize { get; set; }
 
         #endregion Properties
 
         #region Methods
 
-        public void Extract(Stream output)
+        new public void Extract(Stream output)
         {
             if (Archive is not Archive ar)
                 throw new InvalidParsingException($"{Archive.ArchiveAbsolutePath} is not a cyberpunk77 archive.");

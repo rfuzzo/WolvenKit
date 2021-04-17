@@ -38,7 +38,7 @@ namespace WolvenKit.RED4.CR2W.Archive
 
         #region properties
 
-        [Index(0)] public virtual string ArchiveAbsolutePath { get; set; }
+        [Index(0)] new public virtual string ArchiveAbsolutePath { get; set; }
         [Index(1)]
         public virtual int FileCount
         {
@@ -53,14 +53,14 @@ namespace WolvenKit.RED4.CR2W.Archive
             set { }
         }
 
-        [Index(3)] public virtual Header Header { get; set; }
-        [Index(4)] public virtual Index Index { get; set; }
+        [Index(2)] public virtual Header Header { get; set; }
+        [Index(3)] public virtual Index Index { get; set; }
 
         [IgnoreFormat]
         public virtual string Name => Path.GetFileName(ArchiveAbsolutePath);
 
-        [Index(6)]
-        public virtual EArchiveType TypeName
+        [Index(4)]
+        new public virtual EArchiveType TypeName
         {
             get { return EArchiveType.Archive; }
             set { }

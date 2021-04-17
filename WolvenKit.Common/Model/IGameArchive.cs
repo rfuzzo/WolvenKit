@@ -9,8 +9,8 @@ namespace WolvenKit.Common
     {
         #region Properties
 
-        [Index(0)] public virtual string ArchiveAbsolutePath { get; set; }
-        [Index(1)] public virtual EArchiveType TypeName { get; set; }
+        [IgnoreFormat] public virtual string ArchiveAbsolutePath { get; set; }
+        [IgnoreFormat] public virtual EArchiveType TypeName { get; set; }
 
         #endregion Properties
     }

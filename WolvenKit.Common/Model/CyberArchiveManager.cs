@@ -20,9 +20,9 @@ namespace WolvenKit.Common
 
         #region Properties
 
-        [Index(0)] public virtual List<string> AutocompleteSource { get; set; }
-        [Index(1)] public virtual List<string> Extensions { get; set; } = new();
-        [Index(2)] public virtual List<IGameFile> FileList { get; set; }  // Needs to be marked as ZeroFormattable
+        [IgnoreFormat] public virtual List<string> AutocompleteSource { get; set; }
+        [IgnoreFormat] public virtual List<string> Extensions { get; set; } = new();
+        [IgnoreFormat] public virtual List<IGameFile> FileList { get; set; }  // Needs to be marked as ZeroFormattable
         [Index(3)] public virtual Dictionary<string, List<IGameFile>> Items { get; set; }
         [Index(4)] public virtual GameFileTreeNode RootNode { get; set; }  // Needs to be marked as ZeroFormattable
         [Index(5)] public virtual EArchiveType TypeName { get; set; }  // Wants Get and Set for zeroformatter
