@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using WolvenKit.Common.Model;
+using ZeroFormatter;
 
 namespace WolvenKit.Common
 {
+
+    [ZeroFormattable]
     public class GameFileTreeNode
     {
         #region Constructors
@@ -28,13 +31,19 @@ namespace WolvenKit.Common
 
         #region Properties
 
-        public Dictionary<string, GameFileTreeNode> Directories { get; set; }
+        [Index(0)] public virtual Dictionary<string, GameFileTreeNode> Directories { get; set; }
 
-        public string Extension => nameof(ECustomImageKeys.ClosedDirImageKey);
+        [Index(1)]
+        public virtual string Extension
+        {
+            get => nameof(ECustomImageKeys.ClosedDirImageKey);
+            set { }
+        }
 
-        public Dictionary<string, List<IGameFile>> Files { get; set; }
+        [Index(2)] public virtual Dictionary<string, List<IGameFile>> Files { get; set; }
 
-        public string FullPath
+        [Index(3)]
+        public virtual string FullPath
         {
             get
             {
@@ -49,15 +58,22 @@ namespace WolvenKit.Common
                 }
                 return path ?? "";
             }
+            set { }
         }
 
-        public string Name { get; set; }
+        [Index(4)] public virtual string Name { get; set; }
 
-        public GameFileTreeNode Parent { get; set; }
+        [Index(5)] public virtual GameFileTreeNode Parent { get; set; }
 
-        public List<GameFileTreeNode> SubDirectories => Directories.Values.OrderBy(_ => _.Name).ToList();
+        [Index(6)]
+        public virtual List<GameFileTreeNode> SubDirectories
+        {
+            get { return Directories.Values.OrderBy(_ => _.Name).ToList(); }
+            set { }
+        }
 
-        public EArchiveType Type
+        [Index(7)]
+        public virtual EArchiveType Type
         {
             get
             {
@@ -79,6 +95,7 @@ namespace WolvenKit.Common
 
                 return (EArchiveType)Enum.Parse(typeof(EArchiveType), bundlename);
             }
+            set { }
         }
 
         #endregion Properties

@@ -1,11 +1,12 @@
 using System.IO;
 using WolvenKit.RED4.CR2W.Types;
+using ZeroFormatter;
 
 namespace CP77Tools.Model
 {
-    /// <summary>
-    ///
-    /// </summary>
+
+
+    [ZeroFormattable]
     public class Header
     {
         #region Fields
@@ -34,13 +35,13 @@ namespace CP77Tools.Model
 
         #region Properties
 
-        public ulong DebugPosition { get; private set; }
-        public uint DebugSize { get; private set; }
-        public ulong Filesize { get; set; }
-        public ulong IndexPosition { get; set; }
-        public uint IndexSize { get; set; }
-        public uint Magic { get; private set; }
-        public uint Version { get; private set; }
+        [Index(0)] public virtual ulong DebugPosition { get; set; }
+        [Index(1)] public virtual uint DebugSize { get; set; }
+        [Index(2)] public virtual ulong Filesize { get; set; }
+        [Index(3)] public virtual ulong IndexPosition { get; set; }
+        [Index(4)] public virtual uint IndexSize { get; set; }
+        [Index(5)] public virtual uint Magic { get; set; }
+        [Index(6)] public virtual uint Version { get; set; }
 
         #endregion Properties
 

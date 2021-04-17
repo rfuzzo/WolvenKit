@@ -1,11 +1,16 @@
+using ZeroFormatter;
+
 namespace WolvenKit.Common
 {
-    public interface IGameArchive
+
+
+    [ZeroFormattable]
+    public abstract class IGameArchive
     {
         #region Properties
 
-        string ArchiveAbsolutePath { get; set; }
-        EArchiveType TypeName { get; }
+        [Index(0)] public virtual string ArchiveAbsolutePath { get; set; }
+        [Index(1)] public virtual EArchiveType TypeName { get; set; }
 
         #endregion Properties
     }

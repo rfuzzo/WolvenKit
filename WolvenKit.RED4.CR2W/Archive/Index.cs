@@ -2,18 +2,24 @@ using System.Collections.Generic;
 using System.IO;
 using Catel.IO;
 using Catel.IoC;
-using WolvenKit.RED4.CR2W.Archive;
 using Newtonsoft.Json;
 using RED.CRC64;
 using WolvenKit.Common.Services;
+using WolvenKit.RED4.CR2W.Archive;
+using ZeroFormatter;
 
 namespace CP77Tools.Model
 {
     /// <summary>
     /// An entry in Index 3 (DependencyTable)
     /// </summary>
+    [ZeroFormattable]
     public class Dependency
     {
+        public Dependency()
+        {
+
+        }
         #region Constructors
 
         [JsonConstructor]
@@ -33,8 +39,8 @@ namespace CP77Tools.Model
 
         #region Properties
 
-        public ulong Hash { get; set; }
-        public string HashStr { get; private set; }
+        [Index(0)] public virtual ulong Hash { get; set; }
+        [Index(1)] public virtual string HashStr { get; set; }
 
         #endregion Properties
 
@@ -57,11 +63,13 @@ namespace CP77Tools.Model
     /// <summary>
     /// An entry in Index 2 (OffsetTable)
     /// </summary>
+    [ZeroFormattable]
     public class FileSegment
     {
+        public FileSegment() { }
         #region Constructors
 
-        [JsonConstructor]
+        [JsonConstructor] //wat ?
         public FileSegment(ulong offset, uint zsize, uint size)
         {
             Offset = offset;
@@ -80,11 +88,10 @@ namespace CP77Tools.Model
 
         #region Properties
 
-        public int Idx { get; private set; }
-
-        public ulong Offset { get; private set; }
-        public uint Size { get; private set; }
-        public uint ZSize { get; private set; }
+        [Index(0)] public virtual int Idx { get; set; }
+        [Index(1)] public virtual ulong Offset { get; set; }
+        [Index(2)] public virtual uint Size { get; set; }
+        [Index(3)] public virtual uint ZSize { get; set; }
 
         #endregion Properties
 
@@ -108,6 +115,8 @@ namespace CP77Tools.Model
         #endregion Methods
     }
 
+
+    [ZeroFormattable]
     public class Index
     {
         #region Constructors
@@ -132,15 +141,15 @@ namespace CP77Tools.Model
 
         #region Properties
 
-        public ulong Crc { get; private set; }
-        public List<Dependency> Dependencies { get; private set; }
-        public Dictionary<ulong, FileEntry> FileEntries { get; private set; }
-        public uint FileEntryCount { get; private set; }
-        public uint FileSegmentCount { get; private set; }
-        public List<FileSegment> FileSegments { get; private set; }
-        public uint FileTableOffset { get; private set; }
-        public uint FileTableSize { get; set; }
-        public uint ResourceDependencyCount { get; private set; }
+        [Index(0)] public virtual ulong Crc { get; set; }
+        [Index(1)] public virtual List<Dependency> Dependencies { get; set; }
+        [Index(2)] public virtual Dictionary<ulong, FileEntry> FileEntries { get; set; }
+        [Index(3)] public virtual uint FileEntryCount { get; set; }
+        [Index(4)] public virtual uint FileSegmentCount { get; set; }
+        [Index(5)] public virtual List<FileSegment> FileSegments { get; set; }
+        [Index(6)] public virtual uint FileTableOffset { get; set; }
+        [Index(7)] public virtual uint FileTableSize { get; set; }
+        [Index(8)] public virtual uint ResourceDependencyCount { get; set; }
 
         #endregion Properties
 

@@ -8,9 +8,6 @@ using System.Xml.Linq;
 using Catel.IoC;
 using Catel.Logging;
 using CP77.CR2W;
-using WolvenKit.RED4.CR2W;
-using WolvenKit.RED4.CR2W.Archive;
-using WolvenKit.RED4.CR2W.Types;
 using Newtonsoft.Json;
 using Orc.ProjectManagement;
 using WolvenKit.Common;
@@ -18,7 +15,11 @@ using WolvenKit.Common.Services;
 using WolvenKit.Functionality.Services;
 using WolvenKit.Functionality.WKitGlobal;
 using WolvenKit.MVVM.Model.ProjectManagement.Project;
+using WolvenKit.RED4.CR2W;
+using WolvenKit.RED4.CR2W.Archive;
+using WolvenKit.RED4.CR2W.Types;
 using WolvenKit.ViewModels.Editor;
+using ZeroFormatter;
 
 namespace WolvenKit.Functionality.Controllers
 {
@@ -159,14 +160,10 @@ namespace WolvenKit.Functionality.Controllers
             {
                 if (File.Exists(Cp77Controller.GetManagerPath(EManagerType.ArchiveManager)))
                 {
-                    using var file = File.OpenText(Cp77Controller.GetManagerPath(EManagerType.ArchiveManager));
-                    var serializer = new JsonSerializer
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                        PreserveReferencesHandling = PreserveReferencesHandling.Objects,
-                        TypeNameHandling = TypeNameHandling.Auto
-                    };
-                    ArchiveManager = (ArchiveManager)serializer.Deserialize(file, typeof(ArchiveManager));
+
+                    var mc2 = ZeroFormatterSerializer.Deserialize<ArchiveManager>(File.ReadAllBytes(GetManagerPath(EManagerType.ArchiveManager)));
+
+
                 }
                 else
                 {

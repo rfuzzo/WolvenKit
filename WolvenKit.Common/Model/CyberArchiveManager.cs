@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ZeroFormatter;
 
 namespace WolvenKit.Common
 {
-    /// <summary>
-    ///
-    /// </summary>
+
+
+
+
+    [ZeroFormattable]
     public abstract class CyberArchiveManager : IGameArchiveManager
     {
         #region Fields
@@ -17,12 +20,12 @@ namespace WolvenKit.Common
 
         #region Properties
 
-        public List<string> AutocompleteSource { get; set; }
-        public List<string> Extensions { get; set; } = new();
-        public List<IGameFile> FileList { get; set; }
-        public Dictionary<string, List<IGameFile>> Items { get; set; }
-        public GameFileTreeNode RootNode { get; set; }
-        public abstract EArchiveType TypeName { get; }
+        [Index(0)] public virtual List<string> AutocompleteSource { get; set; }
+        [Index(1)] public virtual List<string> Extensions { get; set; } = new();
+        [Index(2)] public virtual List<IGameFile> FileList { get; set; }  // Needs to be marked as ZeroFormattable
+        [Index(3)] public virtual Dictionary<string, List<IGameFile>> Items { get; set; }
+        [Index(4)] public virtual GameFileTreeNode RootNode { get; set; }  // Needs to be marked as ZeroFormattable
+        [Index(5)] public virtual EArchiveType TypeName { get; }  // Wants Get and Set for zeroformatter
 
         #endregion Properties
 

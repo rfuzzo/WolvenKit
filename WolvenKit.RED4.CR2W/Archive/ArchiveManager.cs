@@ -2,10 +2,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using WolvenKit.Common;
+using ZeroFormatter;
 using Path = System.IO.Path;
 
 namespace WolvenKit.RED4.CR2W.Archive
 {
+
+    [ZeroFormattable]
     public class ArchiveManager : CyberArchiveManager
     {
         #region Fields
@@ -37,26 +40,37 @@ namespace WolvenKit.RED4.CR2W.Archive
         #endregion Constructors
 
         #region properties
+        [Index(0)]
+        public virtual Dictionary<string, Archive> Archives { get; set; }
+        [Index(1)]
+        public virtual Dictionary<ulong, List<FileEntry>> Files { get; set; }
+        [Index(2)]
+        public virtual Dictionary<string, List<FileEntry>> GroupedFiles
+        {
 
-        public Dictionary<string, Archive> Archives { get; set; }
-        public Dictionary<ulong, List<FileEntry>> Files { get; }
-
-        public Dictionary<string, List<FileEntry>> GroupedFiles =>
-
-            Files.Values.GroupBy(
-                f => f.FirstOrDefault().Extension,
-                file => file,
-                (ext, items) => new
-                {
-                    Key = ext,
-                    File = items.Where(_ => _.FirstOrDefault().Extension == ext).SelectMany(_ => _).ToList()
-                }).ToDictionary(_ => _.Key, _ => _.File);
+            get
+            {
+                return Files.Values.GroupBy(
+                  f => f.FirstOrDefault().Extension,
+                  file => file,
+                  (ext, items) => new
+                  {
+                      Key = ext,
+                      File = items.Where(_ => _.FirstOrDefault().Extension == ext).SelectMany(_ => _).ToList()
+                  }).ToDictionary(_ => _.Key, _ => _.File);
+            }
+            set { }
+        }
 
         #endregion properties
 
         #region methods
+        [IgnoreFormat]
+        public override EArchiveType TypeName
+        {
+            get { return EArchiveType.Archive; }
+        }
 
-        public override EArchiveType TypeName => EArchiveType.Archive;
 
         /// <summary>
         ///     Load every non-mod bundle it can find in ..\..\content and ..\..\DLC, also calls RebuildRootNode()

@@ -1,5 +1,7 @@
 namespace WolvenKit.Common
 {
+
+
     public enum EArchiveType
     {
         ANY,

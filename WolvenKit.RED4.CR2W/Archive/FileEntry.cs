@@ -1,12 +1,15 @@
 using System;
 using System.IO;
 using Catel.IoC;
-using WolvenKit.RED4.CR2W.Types;
 using WolvenKit.Common;
 using WolvenKit.Common.Services;
+using WolvenKit.RED4.CR2W.Types;
+using ZeroFormatter;
 
 namespace WolvenKit.RED4.CR2W.Archive
 {
+
+    [ZeroFormattable]
     public class FileEntry : IGameFile
     {
         #region Fields
@@ -46,24 +49,44 @@ namespace WolvenKit.RED4.CR2W.Archive
 
         #region Properties
 
-        public IGameArchive Archive { get; set; }
-        public string bytesAsString => BitConverter.ToString(SHA1Hash);
-        public string CompressionType { get; set; }
-        public string Extension => Path.GetExtension(FileName);
-        public string FileName => string.IsNullOrEmpty(_nameStr) ? $"{NameHash64}.bin" : _nameStr;
-        public string Name { get; set; }
-        public ulong NameHash64 { get; set; }
-        public string NameOrHash => string.IsNullOrEmpty(_nameStr) ? $"{NameHash64}" : _nameStr;
-        public uint NumInlineBufferSegments { get; set; }
-        public long PageOffset { get; set; }
-        public uint ResourceDependenciesEnd { get; set; }
-        public uint ResourceDependenciesStart { get; set; }
-        public uint SegmentsEnd { get; set; }
-        public uint SegmentsStart { get; set; }
-        public byte[] SHA1Hash { get; set; }
-        public uint Size { get; set; }
-        public DateTime Timestamp { get; set; }
-        public uint ZSize { get; set; }
+        [Index(0)] public virtual IGameArchive Archive { get; set; }
+        [Index(1)]
+        public virtual string bytesAsString
+        {
+            get { return BitConverter.ToString(SHA1Hash); }
+            set { }
+        }
+        [Index(2)] public virtual string CompressionType { get; set; }
+        [Index(3)]
+        public virtual string Extension
+        {
+            get { return Path.GetExtension(FileName); }
+            set { }
+        }
+        [Index(4)]
+        public virtual string FileName
+        {
+            get { return string.IsNullOrEmpty(_nameStr) ? $"{NameHash64}.bin" : _nameStr; }
+            set { }
+        }
+        [Index(5)] public virtual string Name { get; set; }
+        [Index(6)] public virtual ulong NameHash64 { get; set; }
+        [Index(7)]
+        public virtual string NameOrHash
+        {
+            get { return string.IsNullOrEmpty(_nameStr) ? $"{NameHash64}" : _nameStr; }
+            set { }
+        }
+        [Index(8)] public virtual uint NumInlineBufferSegments { get; set; }
+        [Index(9)] public virtual long PageOffset { get; set; }
+        [Index(10)] public virtual uint ResourceDependenciesEnd { get; set; }
+        [Index(11)] public virtual uint ResourceDependenciesStart { get; set; }
+        [Index(12)] public virtual uint SegmentsEnd { get; set; }
+        [Index(13)] public virtual uint SegmentsStart { get; set; }
+        [Index(14)] public virtual byte[] SHA1Hash { get; set; }
+        [Index(15)] public virtual uint Size { get; set; }
+        [Index(16)] public virtual DateTime Timestamp { get; set; }
+        [Index(17)] public virtual uint ZSize { get; set; }
 
         #endregion Properties
 

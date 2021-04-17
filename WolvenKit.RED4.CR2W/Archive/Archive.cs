@@ -4,13 +4,15 @@ using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
 using CP77Tools.Model;
-using Newtonsoft.Json;
 using WolvenKit.Common;
 using WolvenKit.Common.Oodle;
+using ZeroFormatter;
 using Index = CP77Tools.Model.Index;
 
 namespace WolvenKit.RED4.CR2W.Archive
 {
+
+    [ZeroFormattable]
     public class Archive : IGameArchive
     {
         #region constructors
@@ -36,19 +38,33 @@ namespace WolvenKit.RED4.CR2W.Archive
 
         #region properties
 
-        public string ArchiveAbsolutePath { get; set; }
-        public int FileCount => Files?.Count ?? 0;
+        [Index(0)] public virtual string ArchiveAbsolutePath { get; set; }
+        [Index(1)]
+        public virtual int FileCount
+        {
+            get { return Files?.Count ?? 0; }
+            set { }
+        }
 
-        [JsonIgnore]
-        public Dictionary<ulong, FileEntry> Files => Index?.FileEntries;
+        [IgnoreFormat]
+        public virtual Dictionary<ulong, FileEntry> Files
+        {
+            get { return Index?.FileEntries; }
+            set { }
+        }
 
-        public Header Header { get; set; }
-        public Index Index { get; set; }
+        [Index(3)] public virtual Header Header { get; set; }
+        [Index(4)] public virtual Index Index { get; set; }
 
-        [JsonIgnore]
-        public string Name => Path.GetFileName(ArchiveAbsolutePath);
+        [IgnoreFormat]
+        public virtual string Name => Path.GetFileName(ArchiveAbsolutePath);
 
-        public EArchiveType TypeName => EArchiveType.Archive;
+        [Index(6)]
+        public virtual EArchiveType TypeName
+        {
+            get { return EArchiveType.Archive; }
+            set { }
+        }
 
         #endregion properties
 
@@ -108,7 +124,7 @@ namespace WolvenKit.RED4.CR2W.Archive
         {
             var zSize = offsetEntry.ZSize;
 
-            using var fs = new FileStream(ArchiveAbsolutePath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite,0x1000, FileOptions.None);
+            using var fs = new FileStream(ArchiveAbsolutePath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite, 0x1000, FileOptions.None);
             using var mmf = MemoryMappedFile.CreateFromFile(fs, null, 0, MemoryMappedFileAccess.ReadWrite, HandleInheritability.None, false);
             using var vs = mmf.CreateViewStream((long)offsetEntry.Offset, zSize, MemoryMappedFileAccess.Read);
 
