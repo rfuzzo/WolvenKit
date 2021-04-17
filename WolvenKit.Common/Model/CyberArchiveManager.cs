@@ -25,7 +25,7 @@ namespace WolvenKit.Common
         [Index(2)] public virtual List<IGameFile> FileList { get; set; }  // Needs to be marked as ZeroFormattable
         [Index(3)] public virtual Dictionary<string, List<IGameFile>> Items { get; set; }
         [Index(4)] public virtual GameFileTreeNode RootNode { get; set; }  // Needs to be marked as ZeroFormattable
-        [Index(5)] public virtual EArchiveType TypeName { get; }  // Wants Get and Set for zeroformatter
+        [Index(5)] public virtual EArchiveType TypeName { get; set; }  // Wants Get and Set for zeroformatter
 
         #endregion Properties
 

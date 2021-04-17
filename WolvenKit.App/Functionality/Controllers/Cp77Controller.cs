@@ -160,13 +160,14 @@ namespace WolvenKit.Functionality.Controllers
                 if (File.Exists(Cp77Controller.GetManagerPath(EManagerType.ArchiveManager)))
                 {
 
-                    var mc2 = ZeroFormatterSerializer.Deserialize<ArchiveManager>(File.ReadAllBytes(GetManagerPath(EManagerType.ArchiveManager)));
+                    ArchiveManager = ZeroFormatterSerializer.Deserialize<ArchiveManager>(File.ReadAllBytes(GetManagerPath(EManagerType.ArchiveManager)));
                 }
                 else
                 {
                     ArchiveManager = new ArchiveManager();
                     ArchiveManager.LoadAll(Path.GetDirectoryName(settings.CP77ExecutablePath));
                     var mc2 = ZeroFormatterSerializer.Serialize<ArchiveManager>(ArchiveManager);
+                    File.WriteAllBytes(GetManagerPath(EManagerType.ArchiveManager), mc2);
                 }
             }
             catch (Exception)
