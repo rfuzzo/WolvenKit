@@ -13,7 +13,7 @@ namespace WolvenKit.RED4.CR2W.Archive
     {
         #region Fields
 
-        public static string SerializationVersion = "1.1";
+        public static string SerializationVersion = "1.2"; // Just 1.2?
 
         private DirectoryInfo _parentDirectoryInfo;
 

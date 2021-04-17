@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using WolvenKit.RED4.CR2W.Archive;
+using Catel.IoC;
 using WolvenKit.Bundles;
 using WolvenKit.Cache;
 using WolvenKit.Common;
 using WolvenKit.Functionality.WKitGlobal;
+using WolvenKit.RED4.CR2W.Archive;
 using WolvenKit.W3Strings;
-using Catel.IoC;
 
 namespace WolvenKit.Functionality.Controllers
 {
@@ -44,7 +44,7 @@ namespace WolvenKit.Functionality.Controllers
                     return Path.Combine(ManagerCacheDir, "texture_cache.json");
 
                 case EManagerType.ArchiveManager:
-                    return Path.Combine(ManagerCacheDir, "archive_cache.json");
+                    return Path.Combine(ManagerCacheDir, "archive_cache.bin");
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -114,7 +114,7 @@ namespace WolvenKit.Functionality.Controllers
                 (headerBackground, pwm.UseBlackText, iconBackground).ToTuple(),
                 new List<System.Xml.Linq.XElement> { }
             );
-            
+
             return Task.FromResult(true);
         }
 
