@@ -8,7 +8,6 @@ using System.Xml.Linq;
 using Catel.IoC;
 using Catel.Logging;
 using CP77.CR2W;
-using Newtonsoft.Json;
 using Orc.ProjectManagement;
 using WolvenKit.Common;
 using WolvenKit.Common.Services;
@@ -162,20 +161,12 @@ namespace WolvenKit.Functionality.Controllers
                 {
 
                     var mc2 = ZeroFormatterSerializer.Deserialize<ArchiveManager>(File.ReadAllBytes(GetManagerPath(EManagerType.ArchiveManager)));
-
-
                 }
                 else
                 {
                     ArchiveManager = new ArchiveManager();
                     ArchiveManager.LoadAll(Path.GetDirectoryName(settings.CP77ExecutablePath));
-                    File.WriteAllText(Cp77Controller.GetManagerPath(EManagerType.ArchiveManager), JsonConvert.SerializeObject(ArchiveManager, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                        PreserveReferencesHandling = PreserveReferencesHandling.Objects,
-                        TypeNameHandling = TypeNameHandling.Auto
-                    }));
-                    settings.ManagerVersions[(int)EManagerType.ArchiveManager] = ArchiveManager.SerializationVersion;
+                    var mc2 = ZeroFormatterSerializer.Serialize<ArchiveManager>(ArchiveManager);
                 }
             }
             catch (Exception)
