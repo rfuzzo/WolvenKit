@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\bundledictionary.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\file.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\bundle.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\doboz\Decompressor.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\bundlemanager.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\meshloader.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\cr2w.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\cr2wModel.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\hashdictionary.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\materialloader.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\cr2w\terrainloader.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\engine\resourcepath.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\engine\vk_mesh.cpp">
+      <Filter>test-source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\adler32.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\compress.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\crc32.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\deflate.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\gzclose.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\gzlib.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\gzread.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\gzwrite.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\infback.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\inffast.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\inflate.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\inftrees.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\trees.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\zutil.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\zlib\uncompr.c">
+      <Filter>test-source\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\lz4\lib\xxhash.c">
+      <Filter>test-source\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\lz4\lib\lz4hc.c">
+      <Filter>test-source\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\lz4\lib\lz4frame.c">
+      <Filter>test-source\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\lz4\lib\lz4.c">
+      <Filter>test-source\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\adler32.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\crc32.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\deflate_compress.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\deflate_decompress.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\gzip_compress.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\gzip_decompress.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\utils.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\zlib_compress.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\zlib_decompress.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WKEngine4\third_party\libdeflate\lib\x86\cpu_features.c">
+      <Filter>test-source\libdeflate</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="test-source">
+      <UniqueIdentifier>{939aee76-24ed-4b32-ae91-fef0039fb9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test-source\zlib">
+      <UniqueIdentifier>{bb7c36a8-a1b1-4fab-9077-07c51a253fb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test-source\lz4">
+      <UniqueIdentifier>{3c9006be-a6cb-44ff-b331-9d64051ba7ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test-source\libdeflate">
+      <UniqueIdentifier>{c7efcd87-ea57-4866-a92a-f3cacd80b3ee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

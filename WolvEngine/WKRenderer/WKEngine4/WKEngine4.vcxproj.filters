@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{544c8490-6ae4-4e38-90a9-f3c8ca93abea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{720276a1-44ef-4333-b571-1533d52d60e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vkbootstrap">
+      <UniqueIdentifier>{d4d297ab-5f1e-4548-92dc-9cf9a9845b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cr2w">
+      <UniqueIdentifier>{7bd1e396-c261-4430-9547-90b45bbd9800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fmt">
+      <UniqueIdentifier>{55dea3a9-a83f-4547-aeff-84aed5c41525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\spv_reflect">
+      <UniqueIdentifier>{10c444d5-af5a-433e-bf0e-47c009744784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\imgui">
+      <UniqueIdentifier>{df730422-adb3-4bbc-af2f-927c05336993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vma">
+      <UniqueIdentifier>{419ca638-aed6-4ded-ae51-b0376ab47d1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lz4">
+      <UniqueIdentifier>{78b91d55-d702-46b4-8a2e-f02447aedfc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\zlib">
+      <UniqueIdentifier>{8e04435b-5f85-4971-9aa1-a110036316a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\doboz">
+      <UniqueIdentifier>{ad2efde3-2bca-44a6-8e74-8f3e186e1db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libdeflate">
+      <UniqueIdentifier>{73e6d8eb-822e-4841-8c17-4be4f17d0811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fbx">
+      <UniqueIdentifier>{e8b518ff-3221-4793-bdbe-4ba976f5d3e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\resourcepath.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="wkengine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\keycodes.hpp">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\frustum_cull.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\logger.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\material_system.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\string_utils.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_descriptors.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_initializers.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_mesh.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_pushbuffer.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_scene.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_shaders.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_textures.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_types.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\vkbootstrap\VkBootstrap.h">
+      <Filter>Source Files\vkbootstrap</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\cr2w.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\cr2wModel.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\file.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\hashdictionary.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\meshloader.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\terrainloader.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\materialloader.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\camera.hpp">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\args.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\chrono.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\color.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\compile.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\core.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\format.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\format-inl.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\locale.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\os.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\ostream.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\posix.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\printf.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fmt\ranges.h">
+      <Filter>Source Files\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\spv_reflect\spirv_reflect.h">
+      <Filter>Source Files\spv_reflect</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imconfig.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imgui.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imgui_impl_vulkan.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imgui_internal.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imstb_rectpack.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imstb_textedit.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\imgui\imstb_truetype.h">
+      <Filter>Source Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\vma\vk_mem_alloc.h">
+      <Filter>Source Files\vma</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\bundledictionary.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\bundle.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\lz4\lib\lz4.h">
+      <Filter>Source Files\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\lz4\lib\lz4frame.h">
+      <Filter>Source Files\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\lz4\lib\lz4frame_static.h">
+      <Filter>Source Files\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\lz4\lib\lz4hc.h">
+      <Filter>Source Files\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\lz4\lib\xxhash.h">
+      <Filter>Source Files\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\crc32.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\gzguts.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inffast.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inffixed.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inflate.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inftrees.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\trees.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\zconf.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\zlib.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\zutil.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\deflate.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\doboz\Common.h">
+      <Filter>Source Files\doboz</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\doboz\Decompressor.h">
+      <Filter>Source Files\doboz</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\cr2w\bundlemanager.h">
+      <Filter>Source Files\cr2w</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\adler32_vec_template.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\bt_matchfinder.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\cpu_features_common.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\crc32_table.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\crc32_vec_template.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\decompress_template.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\deflate_compress.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\deflate_constants.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\gzip_constants.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\hc_matchfinder.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\lib_common.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\matchfinder_common.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\unaligned.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\zlib_constants.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\x86\adler32_impl.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\x86\cpu_features.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\x86\crc32_impl.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\x86\crc32_pclmul_template.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\x86\decompress_impl.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\lib\x86\matchfinder_impl.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libdeflate\libdeflate.h">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fbx\fbxModel.h">
+      <Filter>Source Files\fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\fbx\fbxsdk.h">
+      <Filter>Source Files\fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\VulkanBuffer.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\VulkanTools.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\vk_uioverlay.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\threadpool.hpp">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\resourcepath.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\WKapi.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\material_system.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_descriptors.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_engine_scenerender.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_initializers.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_mesh.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_pushbuffer.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_scene.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_shaders.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_textures.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_engine_win32.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\vkbootstrap\VkBootstrap.cpp">
+      <Filter>Source Files\vkbootstrap</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\cr2w.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\file.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\cr2wModel.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\hashdictionary.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\meshloader.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\terrainloader.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\materialloader.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\fmt\format.cc">
+      <Filter>Source Files\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\fmt\os.cc">
+      <Filter>Source Files\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\spv_reflect\spirv_reflect.c">
+      <Filter>Source Files\spv_reflect</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\imgui\imgui.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\imgui\imgui_demo.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\imgui\imgui_draw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\imgui\imgui_impl_vulkan.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\bundledictionary.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\bundle.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\lz4\lib\lz4.c">
+      <Filter>Source Files\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\lz4\lib\lz4frame.c">
+      <Filter>Source Files\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\lz4\lib\lz4hc.c">
+      <Filter>Source Files\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\lz4\lib\xxhash.c">
+      <Filter>Source Files\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\adler32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\compress.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\crc32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzclose.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzlib.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzread.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzwrite.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\infback.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\inffast.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\inflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\inftrees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\trees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\uncompr.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\zutil.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\deflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\doboz\Decompressor.cpp">
+      <Filter>Source Files\doboz</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\cr2w\bundlemanager.cpp">
+      <Filter>Source Files\cr2w</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\adler32.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\crc32.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\deflate_compress.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\deflate_decompress.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\gzip_compress.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\gzip_decompress.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\utils.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\zlib_compress.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\zlib_decompress.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\libdeflate\lib\x86\cpu_features.c">
+      <Filter>Source Files\libdeflate</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\fbx\fbxModel.cpp">
+      <Filter>Source Files\fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\VulkanBuffer.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\VulkanTools.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\vk_uioverlay.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\runtime4\default_lit.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\terrain.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\textured_lit.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\tri_mesh_ssbo_instanced.vert">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\terrain.vert">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\depthReduce.comp">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\indirect_cull.comp">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="..\runtime4\sparse_upload.comp">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

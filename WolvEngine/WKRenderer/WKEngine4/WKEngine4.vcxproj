@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{A72EB313-E519-4653-BC2B-0E0125A9044C}</ProjectGuid>
+    <RootNamespace>WKEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WKENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WKENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;WKENGINE_EXPORTS;_WINDOWS;_USRDLL;VK_USE_PLATFORM_WIN32_KHR;USE_VMA;WIN32;GLM_FORCE_DEPTH_ZERO_TO_ONE;GLM_FORCE_LEFT_HANDED;GLM_FORCE_SWIZZLE;_CRT_SECURE_NO_WARNINGS;LZ4_FAST_DEC_LOOP=1;USE_GAME_BUNDLES;FBXSDK_SHARED;OPT1X;USE_MULTISAMPLING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)engine;$(ProjectDir)third_party;$(ProjectDir);$(ProjectDir)\third_party\libdeflate;$(ProjectDir)\third_party\fbx;D:\VulkanSDK\1.2.170.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\debug;$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SolutionDir)runtime4\$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>../shaders/build-shaders.bat</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Compiling shaders</Message>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;WKENGINE_EXPORTS;_WINDOWS;_USRDLL;VK_USE_PLATFORM_WIN32_KHR;USE_VMA;WIN32;GLM_FORCE_DEPTH_ZERO_TO_ONE;GLM_FORCE_LEFT_HANDED;GLM_FORCE_SWIZZLE;_CRT_SECURE_NO_WARNINGS;LZ4_FAST_DEC_LOOP=1;USE_GAME_BUNDLES;_HAS_EXCEPTIONS=0;FBXSDK_SHARED;OPT1X;USE_MULTISAMPLING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)engine;$(ProjectDir)third_party;$(ProjectDir);$(ProjectDir)\third_party\libdeflate;$(ProjectDir)\third_party\fbx;D:\VulkanSDK\1.2.170.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ExceptionHandling>false</ExceptionHandling>
+      <OpenMPSupport>false</OpenMPSupport>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <DisableSpecificWarnings>4201;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SolutionDir)runtime4\$(TargetName)$(TargetExt)</OutputFile>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\camera.hpp" />
+    <ClInclude Include="engine\frustum_cull.h" />
+    <ClInclude Include="engine\keycodes.hpp" />
+    <ClInclude Include="engine\logger.h" />
+    <ClInclude Include="engine\material_system.h" />
+    <ClInclude Include="engine\resourcepath.h" />
+    <ClInclude Include="engine\string_utils.h" />
+    <ClInclude Include="engine\threadpool.hpp" />
+    <ClInclude Include="engine\vk_descriptors.h" />
+    <ClInclude Include="engine\vk_engine.h" />
+    <ClInclude Include="engine\vk_initializers.h" />
+    <ClInclude Include="engine\vk_mesh.h" />
+    <ClInclude Include="engine\vk_pushbuffer.h" />
+    <ClInclude Include="engine\vk_scene.h" />
+    <ClInclude Include="engine\vk_shaders.h" />
+    <ClInclude Include="engine\vk_textures.h" />
+    <ClInclude Include="engine\vk_types.h" />
+    <ClInclude Include="engine\vk_uioverlay.h" />
+    <ClInclude Include="engine\VulkanBuffer.h" />
+    <ClInclude Include="engine\VulkanTools.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="third_party\cr2w\bundle.h" />
+    <ClInclude Include="third_party\cr2w\bundledictionary.h" />
+    <ClInclude Include="third_party\cr2w\bundlemanager.h" />
+    <ClInclude Include="third_party\cr2w\cr2w.h" />
+    <ClInclude Include="third_party\cr2w\cr2wModel.h" />
+    <ClInclude Include="third_party\cr2w\file.h" />
+    <ClInclude Include="third_party\cr2w\hashdictionary.h" />
+    <ClInclude Include="third_party\cr2w\materialloader.h" />
+    <ClInclude Include="third_party\cr2w\meshloader.h" />
+    <ClInclude Include="third_party\cr2w\terrainloader.h" />
+    <ClInclude Include="third_party\doboz\Common.h" />
+    <ClInclude Include="third_party\doboz\Decompressor.h" />
+    <ClInclude Include="third_party\fbx\fbxModel.h" />
+    <ClInclude Include="third_party\fbx\fbxsdk.h" />
+    <ClInclude Include="third_party\fmt\args.h" />
+    <ClInclude Include="third_party\fmt\chrono.h" />
+    <ClInclude Include="third_party\fmt\color.h" />
+    <ClInclude Include="third_party\fmt\compile.h" />
+    <ClInclude Include="third_party\fmt\core.h" />
+    <ClInclude Include="third_party\fmt\format-inl.h" />
+    <ClInclude Include="third_party\fmt\format.h" />
+    <ClInclude Include="third_party\fmt\locale.h" />
+    <ClInclude Include="third_party\fmt\os.h" />
+    <ClInclude Include="third_party\fmt\ostream.h" />
+    <ClInclude Include="third_party\fmt\posix.h" />
+    <ClInclude Include="third_party\fmt\printf.h" />
+    <ClInclude Include="third_party\fmt\ranges.h" />
+    <ClInclude Include="third_party\imgui\imconfig.h" />
+    <ClInclude Include="third_party\imgui\imgui.h" />
+    <ClInclude Include="third_party\imgui\imgui_impl_vulkan.h" />
+    <ClInclude Include="third_party\imgui\imgui_internal.h" />
+    <ClInclude Include="third_party\imgui\imstb_rectpack.h" />
+    <ClInclude Include="third_party\imgui\imstb_textedit.h" />
+    <ClInclude Include="third_party\imgui\imstb_truetype.h" />
+    <ClInclude Include="third_party\libdeflate\libdeflate.h" />
+    <ClInclude Include="third_party\libdeflate\lib\adler32_vec_template.h" />
+    <ClInclude Include="third_party\libdeflate\lib\bt_matchfinder.h" />
+    <ClInclude Include="third_party\libdeflate\lib\cpu_features_common.h" />
+    <ClInclude Include="third_party\libdeflate\lib\crc32_table.h" />
+    <ClInclude Include="third_party\libdeflate\lib\crc32_vec_template.h" />
+    <ClInclude Include="third_party\libdeflate\lib\decompress_template.h" />
+    <ClInclude Include="third_party\libdeflate\lib\deflate_compress.h" />
+    <ClInclude Include="third_party\libdeflate\lib\deflate_constants.h" />
+    <ClInclude Include="third_party\libdeflate\lib\gzip_constants.h" />
+    <ClInclude Include="third_party\libdeflate\lib\hc_matchfinder.h" />
+    <ClInclude Include="third_party\libdeflate\lib\lib_common.h" />
+    <ClInclude Include="third_party\libdeflate\lib\matchfinder_common.h" />
+    <ClInclude Include="third_party\libdeflate\lib\unaligned.h" />
+    <ClInclude Include="third_party\libdeflate\lib\x86\adler32_impl.h" />
+    <ClInclude Include="third_party\libdeflate\lib\x86\cpu_features.h" />
+    <ClInclude Include="third_party\libdeflate\lib\x86\crc32_impl.h" />
+    <ClInclude Include="third_party\libdeflate\lib\x86\crc32_pclmul_template.h" />
+    <ClInclude Include="third_party\libdeflate\lib\x86\decompress_impl.h" />
+    <ClInclude Include="third_party\libdeflate\lib\x86\matchfinder_impl.h" />
+    <ClInclude Include="third_party\libdeflate\lib\zlib_constants.h" />
+    <ClInclude Include="third_party\lz4\lib\lz4.h" />
+    <ClInclude Include="third_party\lz4\lib\lz4frame.h" />
+    <ClInclude Include="third_party\lz4\lib\lz4frame_static.h" />
+    <ClInclude Include="third_party\lz4\lib\lz4hc.h" />
+    <ClInclude Include="third_party\lz4\lib\xxhash.h" />
+    <ClInclude Include="third_party\spv_reflect\spirv_reflect.h" />
+    <ClInclude Include="third_party\vkbootstrap\VkBootstrap.h" />
+    <ClInclude Include="third_party\vma\vk_mem_alloc.h" />
+    <ClInclude Include="third_party\zlib\crc32.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\deflate.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\gzguts.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inffast.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inffixed.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inflate.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\inftrees.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\trees.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\zconf.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\zlib.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib\zutil.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="wkengine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="engine\material_system.cpp" />
+    <ClCompile Include="engine\resourcepath.cpp" />
+    <ClCompile Include="engine\vk_descriptors.cpp" />
+    <ClCompile Include="engine\vk_engine.cpp" />
+    <ClCompile Include="engine\vk_engine_scenerender.cpp" />
+    <ClCompile Include="engine\vk_engine_win32.cpp" />
+    <ClCompile Include="engine\vk_initializers.cpp" />
+    <ClCompile Include="engine\vk_mesh.cpp" />
+    <ClCompile Include="engine\vk_pushbuffer.cpp" />
+    <ClCompile Include="engine\vk_scene.cpp" />
+    <ClCompile Include="engine\vk_shaders.cpp" />
+    <ClCompile Include="engine\vk_textures.cpp" />
+    <ClCompile Include="engine\vk_uioverlay.cpp" />
+    <ClCompile Include="engine\VulkanBuffer.cpp" />
+    <ClCompile Include="engine\VulkanTools.cpp" />
+    <ClCompile Include="engine\WKapi.cpp" />
+    <ClCompile Include="third_party\cr2w\bundle.cpp" />
+    <ClCompile Include="third_party\cr2w\bundledictionary.cpp" />
+    <ClCompile Include="third_party\cr2w\bundlemanager.cpp" />
+    <ClCompile Include="third_party\cr2w\cr2w.cpp" />
+    <ClCompile Include="third_party\cr2w\cr2wModel.cpp" />
+    <ClCompile Include="third_party\cr2w\file.cpp" />
+    <ClCompile Include="third_party\cr2w\hashdictionary.cpp" />
+    <ClCompile Include="third_party\cr2w\materialloader.cpp" />
+    <ClCompile Include="third_party\cr2w\meshloader.cpp" />
+    <ClCompile Include="third_party\cr2w\terrainloader.cpp" />
+    <ClCompile Include="third_party\doboz\Decompressor.cpp" />
+    <ClCompile Include="third_party\fbx\fbxModel.cpp" />
+    <ClCompile Include="third_party\fmt\format.cc" />
+    <ClCompile Include="third_party\fmt\os.cc" />
+    <ClCompile Include="third_party\imgui\imgui.cpp" />
+    <ClCompile Include="third_party\imgui\imgui_demo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\imgui\imgui_draw.cpp" />
+    <ClCompile Include="third_party\imgui\imgui_impl_vulkan.cpp" />
+    <ClCompile Include="third_party\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="third_party\libdeflate\lib\adler32.c" />
+    <ClCompile Include="third_party\libdeflate\lib\crc32.c" />
+    <ClCompile Include="third_party\libdeflate\lib\deflate_compress.c" />
+    <ClCompile Include="third_party\libdeflate\lib\deflate_decompress.c" />
+    <ClCompile Include="third_party\libdeflate\lib\gzip_compress.c" />
+    <ClCompile Include="third_party\libdeflate\lib\gzip_decompress.c" />
+    <ClCompile Include="third_party\libdeflate\lib\utils.c" />
+    <ClCompile Include="third_party\libdeflate\lib\x86\cpu_features.c" />
+    <ClCompile Include="third_party\libdeflate\lib\zlib_compress.c" />
+    <ClCompile Include="third_party\libdeflate\lib\zlib_decompress.c" />
+    <ClCompile Include="third_party\lz4\lib\lz4.c" />
+    <ClCompile Include="third_party\lz4\lib\lz4frame.c" />
+    <ClCompile Include="third_party\lz4\lib\lz4hc.c" />
+    <ClCompile Include="third_party\lz4\lib\xxhash.c" />
+    <ClCompile Include="third_party\spv_reflect\spirv_reflect.c" />
+    <ClCompile Include="third_party\vkbootstrap\VkBootstrap.cpp" />
+    <ClCompile Include="third_party\zlib\adler32.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\compress.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\crc32.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\deflate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzclose.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzlib.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\gzwrite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\infback.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\inffast.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\inflate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\inftrees.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\trees.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\uncompr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib\zutil.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\runtime4\default_lit.frag" />
+    <None Include="..\runtime4\depthReduce.comp" />
+    <None Include="..\runtime4\indirect_cull.comp" />
+    <None Include="..\runtime4\sparse_upload.comp" />
+    <None Include="..\runtime4\terrain.frag" />
+    <None Include="..\runtime4\terrain.vert" />
+    <None Include="..\runtime4\textured_lit.frag" />
+    <None Include="..\runtime4\tri_mesh_ssbo_instanced.vert" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
