@@ -243,7 +243,7 @@ namespace CP77.CR2W
                 }
                 else
                 {
-                    return Catel.IO.StreamExtensions.ToByteArray(fs);
+                    return fs.ToByteArray();
                 }
 
                 return Array.Empty<byte>();

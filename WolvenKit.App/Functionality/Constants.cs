@@ -1,7 +1,5 @@
 using System.Collections.Immutable;
 using System.Windows.Input;
-using Orc.Squirrel;
-using InputGesture = Catel.Windows.Input.InputGesture;
 
 namespace WolvenKit.Functionality.WKitGlobal
 {
@@ -65,18 +63,6 @@ namespace WolvenKit.Functionality.WKitGlobal
 
             public const string ViewSelected = "Application.ViewSelected";
 
-
-
-
-            public static readonly InputGesture AboutInputGesture = new InputGesture(Key.F1);
-            public static readonly InputGesture ExitInputGesture = new InputGesture(Key.F4, ModifierKeys.Alt);
-            public static readonly InputGesture NewProjectInputGesture = new InputGesture(Key.N, ModifierKeys.Control);
-            public static readonly InputGesture OpenProjectInputGesture = new InputGesture(Key.O, ModifierKeys.Control);
-            public static readonly InputGesture OptionsInputGesture = new InputGesture(Key.F12);
-
-            public static readonly InputGesture SaveFileInputGesture = new InputGesture(Key.S, ModifierKeys.Control);
-            public static readonly InputGesture SaveAllInputGesture = new InputGesture(Key.S, ModifierKeys.Control | ModifierKeys.Shift);
-
             #endregion Fields
         }
 
@@ -94,7 +80,6 @@ namespace WolvenKit.Functionality.WKitGlobal
             #region Fields
 
             public const string General = "Settings.General";
-            public static readonly InputGesture GeneralInputGesture = new InputGesture(Key.S, ModifierKeys.Alt | ModifierKeys.Control);
 
             #endregion Fields
         }
@@ -116,12 +101,7 @@ namespace WolvenKit.Functionality.WKitGlobal
 
                 public const bool CheckForUpdatesDefaultValue = true;
 
-                public static readonly ImmutableArray<UpdateChannel> AvailableChannels = ImmutableArray.Create(
-                    new UpdateChannel("Stable", "XXX"),     //TODO
-                    new UpdateChannel("Beta", "XXX")        //TODO
-                );
-
-                public static readonly UpdateChannel DefaultChannel = AvailableChannels[0];
+                
 
                 #endregion Fields
             }

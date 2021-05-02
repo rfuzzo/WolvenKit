@@ -1,18 +1,13 @@
 using System.Windows.Media;
-using Catel.MVVM;
+using WolvenKit.App.ViewModels;
 
 namespace WolvenKit.ViewModels.Shell
 {
     public class PaneViewModel : ViewModelBase
-    { // #MVVM
-        // #SortNameSpace
+    {
+
 
         #region fields
-
-        private string _contentId = null;
-        private bool _isActive = false;
-        private bool _isSelected = false;
-        private string _title = null;
 
         #endregion fields
 
@@ -26,18 +21,7 @@ namespace WolvenKit.ViewModels.Shell
 
         #region Properties
 
-        public string ContentId
-        {
-            get => _contentId;
-            protected set
-            {
-                if (_contentId != value)
-                {
-                    _contentId = value;
-                    RaisePropertyChanged(nameof(ContentId));
-                }
-            }
-        }
+        public string ContentId { get; set; }
 
         public ImageSource IconSource
         {
@@ -45,44 +29,11 @@ namespace WolvenKit.ViewModels.Shell
             protected set;
         }
 
-        public bool IsActive
-        {
-            get => _isActive;
-            set
-            {
-                if (_isActive != value)
-                {
-                    _isActive = value;
-                    RaisePropertyChanged(nameof(IsActive));
-                }
-            }
-        }
+        public bool IsActive { get; set; }
 
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set
-            {
-                if (_isSelected != value)
-                {
-                    _isSelected = value;
-                    RaisePropertyChanged(nameof(IsSelected));
-                }
-            }
-        }
+        public bool IsSelected { get; set; }
 
-        public new string Title
-        {
-            get => _title;
-            set
-            {
-                if (_title != value)
-                {
-                    _title = value;
-                    RaisePropertyChanged(nameof(Title));
-                }
-            }
-        }
+        public new string Title { get; set; }
 
         #endregion Properties
     }

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using Catel.IoC;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WolvenKit.Common;
 using WolvenKit.Common.Oodle;
 using WolvenKit.Common.Services;
 using WolvenKit.RED4.CR2W.Archive;
@@ -77,7 +77,7 @@ namespace WolvenKit.CLI.MSTests
 
             s_writeToFile = bool.Parse(s_config.GetSection(s_writeToFileSetting).Value);
 
-            ServiceLocator.Default.RegisterType<ILoggerService, LoggerService>();
+            ServiceLocator.Default.RegisterType<ILoggerService, ILoggerService>();
             ServiceLocator.Default.RegisterType<IHashService, HashService>();
 
             _ = ServiceLocator.Default.ResolveType<IHashService>();

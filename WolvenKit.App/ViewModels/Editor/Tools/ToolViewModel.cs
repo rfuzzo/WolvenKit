@@ -43,18 +43,7 @@ namespace WolvenKit.ViewModels.Editor
         /// <summary>
         /// Gets/sets whether this tool window is visible or not.
         /// </summary>
-        public bool IsVisible
-        {
-            get => _isVisible;
-            set
-            {
-                if (_isVisible != value)
-                {
-                    _isVisible = value;
-                    RaisePropertyChanged(() => IsVisible);
-                }
-            }
-        }
+        public bool IsVisible { get; set; }
 
         #endregion IsVisible
 

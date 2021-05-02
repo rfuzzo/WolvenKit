@@ -1,8 +1,5 @@
-using Catel;
-using Catel.Data;
-using Catel.Fody;
-using Catel.IoC;
-using Catel.MVVM;
+using Splat;
+using WolvenKit.App.ViewModels;
 using WolvenKit.Functionality.Services;
 using WolvenKit.Common.Model;
 using WolvenKit.Models.Wizards;
@@ -12,22 +9,21 @@ namespace WolvenKit.ViewModels.Wizards.PublishWizard
 {
     public class RequiredSettingsViewModel : ViewModelBase
     {
+        private readonly IProjectManager projectManager;
+
+
         #region constructors
 
         public RequiredSettingsViewModel(
-            IServiceLocator serviceLocator,
-            IProjectManager projectManager)
+            )
         {
-            Argument.IsNotNull(() => serviceLocator);
-            Argument.IsNotNull(() => projectManager);
+            projectManager = Locator.Current.GetService<IProjectManager>();
 
             if (projectManager.ActiveProject is EditorProject ep)
             {
                 EditorProject = ep;
                 EditorProjectData = ep.Data;
             }
-
-            PublishWizardModel = serviceLocator.ResolveType<PublishWizardModel>();
         }
 
         #endregion constructors
@@ -37,10 +33,6 @@ namespace WolvenKit.ViewModels.Wizards.PublishWizard
         /// <summary>
         /// Gets or sets the EditorProjectData.
         /// </summary>
-        [Model]
-        [Expose("Name")]
-        [Expose("Version")]
-        [Expose("Author")]
         public EditorProjectData EditorProjectData { get; set; }
 
         /// <summary>
@@ -51,8 +43,6 @@ namespace WolvenKit.ViewModels.Wizards.PublishWizard
         /// <summary>
         /// Gets or sets the PublishWizardModel.
         /// </summary>
-        [Model]
-        [Expose("Description")]
         public PublishWizardModel PublishWizardModel { get; set; }
 
         #endregion properties

@@ -10,13 +10,9 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
-using Catel;
-using Catel.IoC;
-using Catel.Services;
 using Feather.Commands;
 using Feather.Controls;
 using HandyControl.Data;
-using Orchestra.Services;
 using WolvenKit.Functionality.Services;
 using WolvenKit.Common;
 using WolvenKit.Common.Model;
@@ -133,10 +129,7 @@ namespace WolvenKit.ViewModels.Editor
             IGrowlNotificationService notificationService
         ) : base(ToolTitle)
         {
-            Argument.IsNotNull(() => projectManager);
-            Argument.IsNotNull(() => messageService);
-            Argument.IsNotNull(() => loggerService);
-            Argument.IsNotNull(() => notificationService);
+
             _projectManager = projectManager;
             _loggerService = loggerService;
             _messageService = messageService;

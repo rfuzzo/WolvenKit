@@ -1,10 +1,11 @@
+using System.Reactive;
 using System.Threading.Tasks;
-using Catel;
-using Catel.Fody;
-using Catel.MVVM;
 using HandyControl.Controls;
+using ReactiveUI;
+using WolvenKit.App.ViewModels;
 using WolvenKit.Functionality.Services;
 using WolvenKit.Models.Wizards;
+using WolvenKit.Common;
 
 namespace WolvenKit.ViewModels.Wizards.FirstSetupWizard
 {
@@ -18,17 +19,13 @@ namespace WolvenKit.ViewModels.Wizards.FirstSetupWizard
 
         #region constructors
 
-        public FinalizeSetupViewModel(ISettingsManager settingsManager, FirstSetupWizardModel firstSetupWizardModel, FirstSetupWizardViewModel firstSetupWizardViewModel)
+        public FinalizeSetupViewModel(FirstSetupWizardModel firstSetupWizardModel, FirstSetupWizardViewModel firstSetupWizardViewModel)
         {
-            Argument.IsNotNull(() => settingsManager);
-            Argument.IsNotNull(() => firstSetupWizardModel);
-            Argument.IsNotNull(() => firstSetupWizardViewModel);
 
-            SettingsManager = settingsManager;
             FirstSetupWizardModel = firstSetupWizardModel;
             FirstSetupWizardViewModel = firstSetupWizardViewModel;
-
-            ControlLoaded = new TaskCommand<ImageSelector>(ControlLoadedExecuteAsync, (imgSelector) => true);
+            
+            ControlLoaded = ReactiveCommand.CreateFromTask<ImageSelector>(ControlLoadedExecuteAsync, (imgSelector) => true);
         }
 
         #endregion constructors
@@ -38,35 +35,18 @@ namespace WolvenKit.ViewModels.Wizards.FirstSetupWizard
         /// <summary>
         /// Gets or sets the FirstSetupWizardModel.
         /// </summary>
-        [Model]
-        [Expose("Author")]
-        [Expose("SelectedGames")]
-        [Expose("AutoInstallMods")]
-        [Expose("CreateModForW3")]
-        [Expose("CreateModForCP77")]
         public FirstSetupWizardModel FirstSetupWizardModel { get; set; }
 
         /// <summary>
         /// Gets or sets the FirstSetupWizardViewModel.
         /// </summary>
-        [Model]
-        [Expose("W3ExePath")]
-        [Expose("WccLitePath")]
-        [Expose("CP77ExePath")]
         public FirstSetupWizardViewModel FirstSetupWizardViewModel { get; set; }
 
-        /// <summary>
-        /// Gets or sets the SettingsManager.
-        /// </summary>
-        [Model]
-        [Expose("DepotPath")]
-        [Expose("ShowGuidedTour")]
-        public ISettingsManager SettingsManager { get; set; }
         #endregion properties
 
         #region commands
 
-        public TaskCommand<ImageSelector> ControlLoaded { get; private set; }
+        public ReactiveCommand<ImageSelector, Unit> ControlLoaded { get; private set; }
 
         /// <summary>
         /// Exectues on control loaded event.

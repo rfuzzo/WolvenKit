@@ -5,9 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Catel.IoC;
-using Catel.Linq;
-using Catel.Logging;
 using Newtonsoft.Json;
 using WolvenKit.Functionality.Services;
 using ProtoBuf;
@@ -49,7 +46,6 @@ namespace WolvenKit.Functionality.Controllers
         public static BundleManager LoadBundleManager()
         {
             var _settings = ServiceLocator.Default.ResolveType<ISettingsManager>();
-            ILog _logger = LogManager.GetCurrentClassLogger();
 
             _logger.Info("Loading bundle manager... ");
             try

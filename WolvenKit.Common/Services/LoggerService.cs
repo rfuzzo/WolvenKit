@@ -4,15 +4,6 @@ using System.ComponentModel;
 
 namespace WolvenKit.Common.Services
 {
-    public enum Logtype
-    {
-        Normal,
-        Error,
-        Important,
-        Success,
-        Wcc
-    }
-
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class LoggerService : ObservableObject, ILoggerService
     {

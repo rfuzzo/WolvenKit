@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Catel.IoC;
 using WolvenKit.RED4.CR2W;
 using CP77Tools.Commands;
 using CP77Tools.Extensions;
 using Luna.ConsoleProgressBar;
+using WolvenKit.Common;
 using WolvenKit.Common.Services;
 
 namespace CP77Tools

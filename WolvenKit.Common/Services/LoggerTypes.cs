@@ -1,5 +1,15 @@
 namespace WolvenKit.Common.Services
 {
+    public enum Logtype
+    {
+        Normal,
+        Error,
+        Important,
+        Success,
+        Wcc
+    }
+
+
     public enum SystemLogFlag
     {
         SLF_Default,

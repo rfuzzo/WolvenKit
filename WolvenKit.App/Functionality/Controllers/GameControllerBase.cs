@@ -8,7 +8,6 @@ using WolvenKit.Cache;
 using WolvenKit.Common;
 using WolvenKit.Functionality.WKitGlobal;
 using WolvenKit.W3Strings;
-using Catel.IoC;
 
 namespace WolvenKit.Functionality.Controllers
 {

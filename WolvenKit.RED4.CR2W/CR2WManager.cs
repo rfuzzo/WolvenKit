@@ -44,7 +44,7 @@ namespace WolvenKit.RED4.CR2W.Types
 
         private static Dictionary<string, Type> m_enums;
 
-        private static LoggerService m_logger;
+        private static ILoggerService m_logger;
 
         private static DirectoryInfo m_projectinfo;
 
@@ -122,7 +122,7 @@ namespace WolvenKit.RED4.CR2W.Types
             return type;
         }
 
-        public static void Init(string projectpath, LoggerService logger)
+        public static void Init(string projectpath, ILoggerService logger)
         {
             m_logger = logger;
             m_projectinfo = new DirectoryInfo(projectpath);

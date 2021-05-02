@@ -1,11 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows.Media;
-using Catel;
-using Catel.IoC;
-using Catel.Logging;
-using Catel.MVVM;
-using Catel.Services;
 using Orchestra.Services;
 using WolvenKit.Common.Services;
 using WolvenKit.Functionality.WKitGlobal;
@@ -30,8 +25,7 @@ namespace WolvenKit.Functionality.Services
 
         #region constructors
 
-        public ApplicationInitializationService(IServiceLocator serviceLocator, ICommandManager commandManager,
-            IPleaseWaitService pleaseWaitService)
+        public ApplicationInitializationService()
         {
             Argument.IsNotNull(() => serviceLocator);
             Argument.IsNotNull(() => commandManager);

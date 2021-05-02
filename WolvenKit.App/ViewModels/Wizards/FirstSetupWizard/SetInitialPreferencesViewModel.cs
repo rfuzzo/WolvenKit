@@ -1,6 +1,4 @@
-using Catel;
-using Catel.Fody;
-using Catel.MVVM;
+using WolvenKit.App.ViewModels;
 using WolvenKit.Models.Wizards;
 
 namespace WolvenKit.ViewModels.Wizards.FirstSetupWizard
@@ -11,8 +9,6 @@ namespace WolvenKit.ViewModels.Wizards.FirstSetupWizard
 
         public SetInitialPreferencesViewModel(FirstSetupWizardModel firstSetupWizardModel)
         {
-            Argument.IsNotNull(() => firstSetupWizardModel);
-
             FirstSetupWizardModel = firstSetupWizardModel;
         }
 
@@ -23,10 +19,6 @@ namespace WolvenKit.ViewModels.Wizards.FirstSetupWizard
         /// <summary>
         /// Gets or sets the FirstSetupWizardModel.
         /// </summary>
-        [Model]
-        [Expose("CreateModForW3")]
-        [Expose("CreateModForCP77")]
-        [Expose("AutoInstallMods")]
         public FirstSetupWizardModel FirstSetupWizardModel { get; set; }
 
         #endregion properties

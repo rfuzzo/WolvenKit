@@ -6,13 +6,7 @@
 
 using System;
 using System.Threading.Tasks;
-using Catel;
-using Catel.Configuration;
-using Catel.IoC;
-using Catel.MVVM;
-using Catel.Threading;
 using WolvenKit.Functionality.Services;
-using Orc.Squirrel;
 using WolvenKit.Functionality.WKitGlobal.Helpers;
 
 namespace WolvenKit.ViewModels.Shell
@@ -30,13 +24,8 @@ namespace WolvenKit.ViewModels.Shell
 
         #region Constructors
 
-        public StatusBarViewModel(IProjectManager projectManager, IServiceLocator serviceLocator, IConfigurationService configurationService,
-            IUpdateService updateService)
+        public StatusBarViewModel()
         {
-            Argument.IsNotNull(() => projectManager);
-            Argument.IsNotNull(() => serviceLocator);
-            Argument.IsNotNull(() => configurationService);
-            Argument.IsNotNull(() => updateService);
 
             _projectManager = projectManager;
             _serviceLocator = serviceLocator;

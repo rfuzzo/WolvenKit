@@ -1,12 +1,10 @@
 using System;
 using System.IO;
 using System.Linq;
-using Catel.IoC;
 using WolvenKit.RED4.CR2W;
 using WolvenKit.RED4.CR2W.Archive;
 using WolvenKit.Common;
 using WolvenKit.Common.Services;
-using StreamExtensions = Catel.IO.StreamExtensions;
 
 namespace CP77Tools.Tasks
 {
@@ -78,7 +76,7 @@ namespace CP77Tools.Tasks
             static bool VerifyFile(Stream ms, string infilepath = "")
             {
                 var c = new CR2WFile();// { FileName = fileEntry.NameOrHash };
-                var originalbytes = StreamExtensions.ToByteArray(ms);
+                var originalbytes = ms.ToByteArray();
                 ms.Seek(0, SeekOrigin.Begin);
                 var readResult = c.Read(ms);
 
@@ -129,7 +127,7 @@ namespace CP77Tools.Tasks
                         {
                             c.Write(bw);
 
-                            var newbytes = StreamExtensions.ToByteArray(wms);
+                            var newbytes = wms.ToByteArray();
                             isBinaryEqual = originalbytes.SequenceEqual(newbytes);
 
                             if (!isBinaryEqual && !string.IsNullOrEmpty(infilepath))

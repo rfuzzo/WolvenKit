@@ -21,9 +21,9 @@ namespace WolvenKit.Common.Services
 
         #region Constructors
 
-        public HashService(ILoggerService loggerService)
+        public HashService()
         {
-            _loggerService = loggerService;
+            _loggerService = ServiceLocator.Default.ResolveType<ILoggerService>();
             Load();
         }
 

@@ -3,12 +3,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using Catel;
-using Catel.IoC;
-using Catel.Logging;
-using Catel.MVVM;
-using Catel.Reflection;
-using Catel.Services;
 using WolvenKit.Functionality.Services;
 using WolvenKit.Common.Services;
 using WolvenKit.Functionality.Commands;
@@ -36,18 +30,9 @@ namespace WolvenKit.ViewModels.Shell
         #region constructors
 
         public RibbonViewModel(
-            ISettingsManager settingsManager,
-            IProjectManager projectManager,
-            ILoggerService loggerService,
-            INavigationService navigationService,
-            IUIVisualizerService uiVisualizerService
-            )
+        )
         {
-            Argument.IsNotNull(() => loggerService);
-            Argument.IsNotNull(() => navigationService);
-            Argument.IsNotNull(() => uiVisualizerService);
-            Argument.IsNotNull(() => projectManager);
-            Argument.IsNotNull(() => settingsManager);
+
 
             _projectManager = projectManager;
             _loggerService = loggerService;
@@ -60,8 +45,8 @@ namespace WolvenKit.ViewModels.Shell
             GlobalRibbonVM = this;
             ViewSelectedCommand = new DelegateCommand<object>(ExecuteViewSelected, CanViewSelected);
 
-            var assembly = AssemblyHelper.GetEntryAssembly();
-            Title = assembly.Title();
+
+
         }
 
         #endregion constructors

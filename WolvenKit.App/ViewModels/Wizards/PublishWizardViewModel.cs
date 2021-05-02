@@ -1,7 +1,5 @@
-using Catel.IoC;
-using Catel.MVVM;
+using WolvenKit.App.ViewModels;
 using WolvenKit.Functionality.Services;
-using Splat;
 using WolvenKit.Common;
 using WolvenKit.Functionality.WKitGlobal;
 using WolvenKit.MVVM.Model.ProjectManagement.Project;
@@ -12,7 +10,7 @@ namespace WolvenKit.ViewModels.Wizards
     {
         #region Properties
 
-        private ILogger Logger => ServiceLocator.Default.ResolveType<ILogger>();
+        private ILogger Logger => WolvenKit.Common.ServiceLocator.Default.ResolveType<ILogger>();
 
         #endregion Properties
 
@@ -37,7 +35,7 @@ namespace WolvenKit.ViewModels.Wizards
 
         public void PublishMod()
         {
-            var proj = ServiceLocator.Default.ResolveType<IProjectManager>().ActiveProject as EditorProject;
+            var proj = ServiceLocator.Default.ResolveType<IProjectManager>().ActiveProject;
             if (proj == null)
             {
                 return;

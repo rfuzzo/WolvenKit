@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Catel.IoC;
 using WolvenKit.RED4.CR2W.Archive;
 using WolvenKit.RED4.CR2W.Extensions;
+using WolvenKit.Common;
 using WolvenKit.Common.Services;
 
 namespace CP77.CR2W

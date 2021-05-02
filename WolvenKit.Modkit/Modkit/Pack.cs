@@ -7,6 +7,7 @@ using WolvenKit.RED4.CR2W.Archive;
 using WolvenKit.RED4.CR2W.Extensions;
 using CP77Tools.Model;
 using RED.CRC32;
+using WolvenKit.Common;
 using WolvenKit.Common.FNV1A;
 using WolvenKit.Common.Oodle;
 using WolvenKit.Common.Services;
@@ -186,7 +187,7 @@ namespace CP77.CR2W
                 else
                 {
                     fileStream.Seek(0, SeekOrigin.Begin);
-                    var cr2winbuffer = Catel.IO.StreamExtensions.ToByteArray(fileStream);
+                    var cr2winbuffer = fileStream.ToByteArray();
                     var offset = (ulong)bw.BaseStream.Position;
                     var size = (uint)cr2winbuffer.Length;
 
@@ -213,7 +214,7 @@ namespace CP77.CR2W
 
                 // save table data
                 var sha1 = new System.Security.Cryptography.SHA1Managed();
-                var sha1hash = sha1.ComputeHash(Catel.IO.StreamExtensions.ToByteArray(fileBinaryReader.BaseStream)); //TODO: this is only correct for files with no buffer
+                var sha1hash = sha1.ComputeHash(fileBinaryReader.BaseStream.ToByteArray()); //TODO: this is only correct for files with no buffer
                 var item = new FileEntry(hash, DateTime.Now, (uint)flags
                     , firstoffsetidx, lastoffsetidx,
                     firstimportidx, lastimportidx
