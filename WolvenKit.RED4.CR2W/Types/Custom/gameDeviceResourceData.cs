@@ -1,5 +1,4 @@
 using System.IO;
-using Catel.IO;
 using WolvenKit.RED4.CR2W.Reflection;
 using FastMember;
 
@@ -42,7 +41,7 @@ namespace WolvenKit.RED4.CR2W.Types
             CookedDeviceData.Write(bw);
 
             file.Write((uint)ms.Position + 4);
-            file.Write(ms.ToByteArray());
+            file.Write(ms.ToArray());
         }
     }
 

@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using Catel.IoC;
+using WolvenKit.Common;
 using WolvenKit.RED4.CR2W.Reflection;
 using WolvenKit.Common.Services;
 using WolvenKit.Common.Model.Cr2w;
@@ -231,4 +231,6 @@ namespace WolvenKit.RED4.CR2W.Types
         public override string ToString() => string.Join(",", this.EnumValueList);
 
     }
+
+    
 }

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
-using Catel.IO;
-using Catel.IoC;
 using WolvenKit.RED4.CR2W.Archive;
 using Newtonsoft.Json;
 using RED.CRC64;
+using WolvenKit.Common;
 using WolvenKit.Common.Services;
 
 namespace CP77Tools.Model
@@ -179,8 +178,10 @@ namespace CP77Tools.Model
             bw.Write(FileTableOffset);
             bw.Write((uint)ms.Length + 8);
             //crc64 calculate
-            bw.Write(Crc64.Compute(tablewriter.BaseStream.ToByteArray()));
-            bw.Write(tablewriter.BaseStream.ToByteArray());
+
+
+            bw.Write(Crc64.Compute(ms.ToArray()));
+            bw.Write(ms.ToArray());
         }
 
         private void Read(BinaryReader br, Archive parent)

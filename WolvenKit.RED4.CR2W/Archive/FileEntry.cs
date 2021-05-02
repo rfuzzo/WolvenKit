@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using Catel.IoC;
 using WolvenKit.RED4.CR2W.Types;
 using WolvenKit.Common;
 using WolvenKit.Common.Services;

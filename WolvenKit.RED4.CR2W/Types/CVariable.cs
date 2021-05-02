@@ -13,20 +13,18 @@ using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Schema;
-using Catel.Data;
-using Catel.IoC;
 using Newtonsoft.Json;
+using ReactiveUI;
 using WolvenKit.Common;
 using WolvenKit.Common.Model.Cr2w;
 using WolvenKit.Common.Extensions;
 using WolvenKit.RED4.CR2W.Reflection;
 using WolvenKit.Common.Model;
 using WolvenKit.Common.Services;
-using ObservableObject = Catel.Data.ObservableObject;
 
 namespace WolvenKit.RED4.CR2W.Types
 {
-    public abstract class CVariable : ObservableObject, IEditableVariable
+    public abstract class CVariable : ReactiveObject, IEditableVariable
     {
         #region ctor
 
@@ -49,7 +47,6 @@ namespace WolvenKit.RED4.CR2W.Types
         }
 
         #endregion
-
 
         #region Fields
 
@@ -103,7 +100,7 @@ namespace WolvenKit.RED4.CR2W.Types
                     {
                         ParentVar.IsSerialized = true;
                     }
-                    RaisePropertyChanged(() => IsSerialized, oldValue, value);
+                    //RaisePropertyChanged(nameof(IsSerialized));
                 }
             }
         }

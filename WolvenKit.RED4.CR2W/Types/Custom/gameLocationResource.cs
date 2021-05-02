@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using Catel.IO;
 using WolvenKit.RED4.CR2W.Reflection;
 
 namespace WolvenKit.RED4.CR2W.Types
@@ -39,7 +38,7 @@ namespace WolvenKit.RED4.CR2W.Types
             bw.Write((byte)0x00); //TODO
 
             file.Write((uint)ms.Length + 4);
-            file.Write(ms.ToByteArray());
+            file.Write(ms.ToArray());
         }
     }
 }

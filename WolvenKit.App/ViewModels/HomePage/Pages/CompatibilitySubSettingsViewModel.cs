@@ -1,8 +1,3 @@
-using Catel;
-using Catel.Data;
-using Catel.Fody;
-using Catel.IoC;
-using Catel.MVVM;
 using WolvenKit.Functionality.Services;
 
 namespace WolvenKit.ViewModels.HomePage.Pages

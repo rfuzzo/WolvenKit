@@ -1,4 +1,3 @@
-using Catel;
 using RED.CRC32;
 using System;
 using System.Collections;
@@ -9,24 +8,23 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Catel.IoC;
 using WolvenKit.Common;
 using WolvenKit.Common.Model;
 using WolvenKit.RED4.CR2W.Types;
 using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
-using Catel.Data;
 using FastMember;
 using WolvenKit.Common.Services;
 using WolvenKit.Common.FNV1A;
 using Newtonsoft.Json;
+using ReactiveUI;
 using WolvenKit.Common.Model.Cr2w;
 using WolvenKit.RED4.CR2W.Exceptions;
 using WolvenKit.RED4.CR2W.Reflection;
 
 namespace WolvenKit.RED4.CR2W
 {
-    public class CR2WFile : Catel.Data.ObservableObject, IWolvenkitFile
+    public class CR2WFile : ReactiveObject, IWolvenkitFile
     {
         #region Enums
         public enum EChunkDisplayMode
@@ -339,7 +337,7 @@ namespace WolvenKit.RED4.CR2W
                 }
 
                 //Update UI
-                RaisePropertyChanged(nameof(Chunks));
+                //RaisePropertyChanged(nameof(Chunks));
             }
 
             return removed;
